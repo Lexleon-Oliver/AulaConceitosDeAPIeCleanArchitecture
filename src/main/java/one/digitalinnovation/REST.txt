@@ -1,0 +1,51 @@
+#Caracteristiscas:
+
+* REST= acronimo de representação de transferencia de estado (REpresentional State Transfer)
+* Meio de integração entre sistemas de qualquer stack tecnologica
+
+        Constraints
+
+*   Interface Uniforme:
+Baseado em recursos, interfaces pot onde o cliente se comunica com o servidor;
+
+*   CLiente-Servidor:
+Cliente e servidor podem existir e serem desenvolvidos separadamente, são independentes.
+
+*   Sem estado:
+O Servidor não guarda estado, sessao, necessario sempre, a cada requisição, caso necessario, informar o servidor de quem
+está requerendo o dado especifico.
+
+*   Cache:
+Funcionalidade que elimina, dado algumas configurações, voltar ao servidor, se a requisição se repetir dentro de um
+tempo. Cache pode ser gerenciado em modo client ou server side.
+
+*   Sistema em camadas:
+Por ser sem estado, permite distribuir as impplantações e ou recursos, ex: API em um servidor, data storage em outro e
+sistema de autenticação em um terceiro servidor
+
+*   Codigo sobre demanda:
+Possibilidade de retornar "executavéis" via API para renderização de algum componente se necessario
+
+            Verbos HTTP:
+
+*   GET
+*   POST
+*   PUT
+*   PATCH
+*   DELETE
+
+            Códigos HTTP:
+
+*   1xx- Informações
+*   2xx- Sucesso na Requisição
+*   3xx- Redirecionamentos
+*   4xx- Erro no lado do cliente
+*   5xx- Erro no lado do servidor
+
+
+            Idempotencia
+*Uma requisição idempotente é aquela que, independente da quantidade de vezes que se execute, o efeito é o mesmo que da
+primeira execução;
+
+*POST- Altera estado no servidor, cria recurso, logo, não é idempotente;
+*GET, PUT, DELETE, HEAD, OPTIONS e TRACE são idempotentes
